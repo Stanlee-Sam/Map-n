@@ -5,23 +5,23 @@ const UserSchema = new mongoose.Schema(
   {
     // attributes
     username: {
-      type: string,
-      require: true,
-      max: 30,
-      min: 3,
+      type: String,
+      required: true,
+      maxlength: 30,
+      minlength: 3,
       unique: true,
     },
 
     email: {
-      type: string,
-      require: true,
-      max: 50,
+      type: String,
+      required : true,
+      maxlength: 50,
       unique: true,
     },
     password: {
       type: string,
       required,
-      min: 6,
+      minlength: 6,
     },
   },
   { timestamps: true }
