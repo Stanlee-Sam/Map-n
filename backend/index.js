@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const app = express();
 const pinRoute = require ("./routes/pins.routes.js")
+const userRoute = require ("./routes/users.routes.js")
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO_URL).then(()=> {
 });
 
 app.use('/api/pins', pinRoute)
+app.use('/api/users', userRoute)
 
 app.listen(1600, ()=> {
     console.log("Server is running on port 1600")
